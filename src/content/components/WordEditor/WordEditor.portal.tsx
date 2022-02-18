@@ -3,6 +3,7 @@ import classnames from 'classnames'
 import { useRefFn } from 'observable-hooks'
 import { ShadowPortal, defaultTimeout } from '@/components/ShadowPortal'
 import { WordEditor, WordEditorProps } from './WordEditor'
+import { WordEditor2 } from '../WordEditor2'
 
 export interface WordEditorPortalProps extends WordEditorProps {
   show: boolean
@@ -23,7 +24,8 @@ export const WordEditorPortal: FC<WordEditorPortalProps> = props => {
       innerRootClassName={classnames({ isAnimate: withAnimation, darkMode })}
       timeout={withAnimation ? defaultTimeout : 0}
     >
-      {() => <WordEditor {...restProps} />}
+      {/* {() => <WordEditor {...restProps} />} */}
+      {() => <WordEditor2 {...restProps} />}
     </ShadowPortal>
   )
 }

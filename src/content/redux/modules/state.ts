@@ -1,5 +1,5 @@
 import { PromiseType } from 'utility-types'
-import { newWord, Word } from '@/_helpers/record-manager'
+import { newWord, Word, newWord2 } from '@/_helpers/record-manager'
 import { DictID } from '@/app-config'
 import { getConfig } from '@/_helpers/config-manager'
 import { getProfileIDList, getActiveProfile } from '@/_helpers/profile-manager'
@@ -56,6 +56,12 @@ export const initState = async () => {
     wordEditor: {
       isShow: false,
       word: newWord(),
+      // translate context on start
+      translateCtx: false
+    },
+    wordEditor2: {
+      isShow: false,
+      word: newWord2(),
       // translate context on start
       translateCtx: false
     },

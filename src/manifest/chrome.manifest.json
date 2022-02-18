@@ -8,7 +8,6 @@
   "optional_permissions": [
     "background"
   ],
-  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjbGLk9zhU/TkGbCLxXsj0Y5rN8Ks16T2K6k0ryT3EwCMLvIV0IQvmiopHpycR1/F3Wc6YufyLvoZTgTqOxrp2Yg1Oz8V80cpbcwQAvFcBFaGJFOspFe9wiO0PO5QrCmNQODIbPEChlxg+fAObLBzqZP8Lca797hlAsyfMyn4/eNI/Jk3KYe3osehbJTYH+JoXtX6ceX9YD3gJKp4LenSgTCo6V/6TRCkYldEI+TzLrS3apVH+0eC7sQtFmdvqDDRXKyC1gjFZ5ZTGTANxorc7LBpMLTaRuMDTWz4tArwjpo1QaZg6Slx+oWx5buEzW9Yws+Pr6DksojyTrnhLAgvtwIDAQAB",
   "content_security_policy": "script-src 'self' chrome-extension://hfjbmagddngcpeloejdejnfgbamkjaeg/ chrome-extension://aibcglbfblnogfjhbcmmpobjhnomhcdo/; object-src 'self'",
   "incognito": "split",
   "update_url": "https://clients2.google.com/service/update2/crx",

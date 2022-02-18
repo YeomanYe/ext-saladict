@@ -11,6 +11,7 @@ export interface WordEditorPanelProps {
   containerWidth: number
   title: React.ReactNode
   btns?: WordEditorPanelBtns
+  style?: Object
   onClose: () => void
 }
 
@@ -24,7 +25,7 @@ export const WordEditorPanel: FC<WordEditorPanelProps> = props => {
     >
       <div
         className="wordEditorPanel-Container"
-        style={{ width: props.containerWidth }}
+        style={{ width: props.containerWidth, ...(props.style || {}) }}
       >
         <div className="wordEditorPanel">
           <header className="wordEditorPanel-Header">

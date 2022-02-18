@@ -1,19 +1,17 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+import getDefaultConfig from '@/app-config'
+import { newWord, newWord2 } from '@/_helpers/record-manager'
+import {
+  mockRuntimeMessage,
+  withi18nNS, withLocalStyle,
+  withSideEffect
+} from '@/_helpers/storybook'
 import { action } from '@storybook/addon-actions'
+import { boolean, number, withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+import faker from 'faker'
+import React from 'react'
 import { jsxDecorator } from 'storybook-addon-jsx'
 import { withPropsTable } from 'storybook-addon-react-docgen'
-import { withKnobs, boolean, number } from '@storybook/addon-knobs'
-import { WordEditor } from '../WordEditor/WordEditor'
-import {
-  withLocalStyle,
-  withSideEffect,
-  mockRuntimeMessage,
-  withi18nNS
-} from '@/_helpers/storybook'
-import faker from 'faker'
-import { newWord } from '@/_helpers/record-manager'
-import getDefaultConfig from '@/app-config'
 import WordEditorPortal from '../WordEditor/WordEditor.portal'
 import { WordEditor2 } from './WordEditor2'
 
@@ -49,10 +47,25 @@ storiesOf('Content Scripts|WordEditor', module)
   .add(
     'WordEditor2',
     () => {
-      const config = getDefaultConfig()
-      const darkMode = boolean('Dark Mode', false)
+      // const config = getDefaultConfig()
+      // const darkMode = boolean('Dark Mode', false)
 
-      return <WordEditor2 />
+      return (
+        <WordEditor2
+          wordEditor={{
+            word: newWord2({
+              date: faker.date.past().valueOf(),
+              text: faker.random.word(),
+              trans: faker.lorem.sentence(),
+              example: faker.lorem.sentence(),
+              exampleTrans: faker.lorem.sentence(),
+              img: faker.image.imageUrl(),
+              symbol: faker.lorem.sentence()
+            }),
+            translateCtx: false
+          }}
+        />
+      )
     },
     {
       decorators: [withLocalStyle(require('../WordEditor/WordEditor.scss'))],

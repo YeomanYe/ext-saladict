@@ -49,6 +49,31 @@ export function newWord(word?: Partial<Word>): Word {
       }
 }
 
+export interface Word2 {
+  /** primary key, milliseconds elapsed since the UNIX epoch */
+  date: number
+  /** word text */
+  text: string
+  trans: string
+  exampleTrans: string
+  example: string
+  img: string
+  symbol: string
+}
+
+export function newWord2(word?: Partial<Word2>): Partial<Word2> {
+  return (
+    word || {
+      text: '',
+      trans: '',
+      exampleTrans: '',
+      example: '',
+      img: '',
+      symbol: ''
+    }
+  )
+}
+
 export function isInNotebook(word: Word): Promise<boolean> {
   return message
     .send<'IS_IN_NOTEBOOK'>({ type: 'IS_IN_NOTEBOOK', payload: word })
